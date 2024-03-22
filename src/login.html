@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link href="./output.css" rel="stylesheet">
+    <style>
+   
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-image: url('images/jungle-background.jpg'); 
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .form-container {
+            background-color: rgba(255, 255, 255, 0.9); 
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2); 
+            width: 320px;
+            text-align: center;
+        }
+
+        .form-container h1 {
+            color: #2C7A7B; 
+            margin-bottom: 20px;
+        }
+
+        .form-container input[type="text"],
+        .form-container input[type="password"] {
+            border: 1px solid #2C7A7B; 
+            padding: 10px;
+            margin-bottom: 15px; 
+            border-radius: 5px;
+            width: calc(100% - 22px);
+        }
+
+        .form-container button[type="submit"] {
+            background-color: #2C7A7B; 
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .form-container button[type="submit"]:hover {
+            background-color: #1F5F60; 
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h1 class="text-3xl font-semibold text-green-600 mb-4">Login</h1>
+        <form id="loginForm" onsubmit="return loginUser()">
+            <input id="username" type="text" placeholder="Username" class="block w-full px-4 py-2 border border-gray-300 rounded-md mb-3 focus:outline-none focus:border-green-400">
+            <input id="password" type="password" placeholder="Password" class="block w-full px-4 py-2 border border-gray-300 rounded-md mb-6 focus:outline-none focus:border-green-400"> <!-- Increased margin bottom -->
+            <button type="submit" class="block w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-4 rounded-md transition duration-300">Login</button>
+        </form>
+    </div>
+
+    <script>
+        function loginUser() {
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+
+            
+            if (username === "riri" && password === "12345") {
+                
+                window.location.href = "dashboard.html";
+                return false; 
+            } else {
+                alert("Invalid username or password");
+                return false;
+            }
+        }
+    </script>
+</body>
+</html>
